@@ -816,7 +816,7 @@ function Contact() {
 
   const socialLinks = [
     { icon: Github, label: "GitHub", href: "https://github.com/pkrish5" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/pranavkrishnan" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/pranavkrishnan-" },
     { icon: Mail, label: "Email", href: "mailto:pranav.krishnan05@gmail.com" }
   ];
 
