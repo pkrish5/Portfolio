@@ -3,33 +3,47 @@ import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'fra
 import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Menu, X, ArrowUpRight, MapPin, Calendar, Award, Code2, Cpu, Database, Globe, Zap, Layers, Terminal, Leaf, Lock, Brain, Network, Gauge, Gamepad2, Music, Radio, Shield, Users, GitBranch, ChevronRight } from 'lucide-react';
 import '@fontsource/crimson-pro/400.css';
 import '@fontsource/crimson-pro/600.css';
-import '@fontsource/space-grotesk/400.css';
-import '@fontsource/space-grotesk/500.css';
-import '@fontsource/space-grotesk/700.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
 import './App.css';
 
 const projects = [
   {
-    title: "Rootwise",
+    title: "Plant Buddi App",
     subtitle: "IoT Plant Care Platform",
-    description: "Full-stack IoT ecosystem with ESP32 sensors, automated watering, and AI-powered plant health analysis via Gemini Vision API.",
-    longDescription: "Architected serverless backend with 40+ Lambda functions supporting 500+ plant species. Features timezone-aware streak tracking, automated watering triggers, and computer vision-based disease detection. Built with Flutter for cross-platform mobile experience.",
-    tags: ["Flutter", "AWS Lambda", "ESP32", "Gemini API", "IoT", "DynamoDB"],
+    description: "Full-stack IoT platform with ESP32 sensors enabling real-time automated watering via MQTT across multiple devices.",
+    longDescription: "Engineered full-stack IoT platform with ESP32 sensors. Built gamified Flutter mobile app with streak tracking, community forums, and Firebase push notifications. Developed Gemini Vision AI system analyzing plant photos to detect health issues. Implemented autonomous species identification pipeline generating 500+ botanical care profiles.",
+    tags: ["Python", "Node.js", "Flutter", "ESP32", "AWS IoT", "Lambda", "DynamoDB"],
     icon: Leaf,
-    color: "#2d5a3d",
+    color: "#10b981",
     featured: true,
-    category: "fullstack"
+    category: "fullstack",
+    githubUrl: "https://plantbuddi.com" // Update this link
   },
   {
-    title: "Hurricane Damage Detection",
-    subtitle: "Deep Learning Building Assessment",
-    description: "CNN system achieving 99.83% AUC for post-Hurricane Harvey damage classification with Docker-containerized REST API.",
-    longDescription: "Implemented and compared three neural architectures (ResNet, VGG, Custom CNN) with transfer learning and ensemble methods. Trained on satellite imagery with extensive data augmentation for robust predictions across damage severity levels.",
-    tags: ["PyTorch", "CNN", "Docker", "REST API", "Computer Vision", "Transfer Learning"],
+    title: "Brain Board",
+    subtitle: "AI-Powered Mind Mapping",
+    description: "AI-powered mind-mapping tool that transcribes live conversations and visualizes ideas as knowledge graphs.",
+    longDescription: "Built AI-powered mind-mapping tool that transcribes live conversations and visualizes ideas as knowledge graphs to aid ideation. Integrated Python, Deepgram, Gemini, AWS Lambda & DynamoDB to enable real-time speech-to-visual processing on the edge.",
+    tags: ["Python", "Deepgram", "Gemini", "AWS Lambda", "DynamoDB"],
     icon: Brain,
-    color: "#1a3a2a",
+    color: "#8b5cf6",
     featured: true,
-    category: "ml"
+    category: "ml",
+    githubUrl: "https://github.com/adiv06/HackTX-25" // Update this link
+  },
+  {
+    title: "CrowdCast",
+    subtitle: "Edge-Sensing AI System",
+    description: "Edge-sensing AI system using Sony Aitrios sensors to reduce overcrowding by rerouting foot traffic.",
+    longDescription: "Built an edge-sensing AI system to reduce overcrowding by rerouting tourists toward lesser-known attractions. Used Sony Aitrios sensor and real-time analytics to detect crowd density and optimize foot traffic flow. Awarded 1st place overall at Sony AITRIOS Hackathon.",
+    tags: ["Python", "Edge Computing", "Real-time Analytics", "Sony Aitrios"],
+    icon: Users,
+    color: "#f59e0b",
+    featured: true,
+    category: "ml",
+    githubUrl: "https://github.com/pkrish5/CrowdCast" // Update this link
   },
   {
     title: "Texas Guadaloop",
@@ -39,19 +53,33 @@ const projects = [
     tags: ["Python", "A* Algorithm", "Multi-objective Optimization", "GIS", "Research"],
     icon: Gauge,
     color: "#3d6b4d",
-    featured: true,
-    category: "algorithms"
+    featured: false,
+    category: "algorithms",
+    githubUrl: "https://github.com/pkrish5/Texas-Guadaloop" // Update this link
   },
   {
     title: "Flappy Bird Game",
     subtitle: "Embedded Gaming System",
-    description: "Real-time game on MSPM0 with DAC audio, LCD graphics, interrupt-based collision detection, and 30fps animations.",
-    longDescription: "Complete embedded game featuring multiple language support, volume control via slide potentiometer, high score persistence, and FSM-based game state management. Developed physics engine with precise timing control using ARM Cortex-M0.",
-    tags: ["C++", "ARM Assembly", "MSPM0", "DAC", "LCD", "Interrupts"],
+    description: "Multiplayer side-scroller on MSP-M0 with LCD sprite rendering, DAC audio, and 60Hz physics engine.",
+    longDescription: "Engineered multiplayer side-scroller on MSP-M0 with LCD sprite rendering, DAC audio, and ADC input sampling. Programmed 60Hz physics engine using SysTick interrupts for smooth scrolling and precise collision detection.",
+    tags: ["C/C++", "ARM MSP-M0", "LCD", "DAC", "Interrupts"],
     icon: Gamepad2,
     color: "#2a4a3a",
     featured: false,
-    category: "embedded"
+    category: "embedded",
+    githubUrl: "https://github.com/pkrish5/ECE319H-Embedded-Systems-Honors"
+  },
+  {
+    title: "Proxy Lock",
+    subtitle: "Universal Smart Lock",
+    description: "Renter-friendly smart lock with Arduino, BLE, React dashboard, and Firebase.",
+    longDescription: "Built renter-friendly smart lock w/ React, Firebase, and Bluetooth LE proximity with an Arduino for secure, automatic unlocking. Designed for temporary installations preserving existing locks.",
+    tags: ["React", "Firebase", "Bluetooth LE", "Arduino", "IoT"],
+    icon: Lock,
+    color: "#1a3a2a",
+    featured: false,
+    category: "iot",
+    githubUrl: "https://github.com/pkrish5/Proxy-Lock" // Update this link
   },
   {
     title: "Traffic Light FSM",
@@ -62,7 +90,8 @@ const projects = [
     icon: Zap,
     color: "#1f3f2f",
     featured: false,
-    category: "embedded"
+    category: "embedded",
+    githubUrl: "https://github.com/pkrish5/ECE319H-Embedded-Systems-Honors"
   },
   {
     title: "IR Communication System",
@@ -73,7 +102,8 @@ const projects = [
     icon: Radio,
     color: "#4a7a5a",
     featured: false,
-    category: "embedded"
+    category: "embedded",
+    githubUrl: "https://github.com/pkrish5/ECE319H-Embedded-Systems-Honors"
   },
   {
     title: "Digital Piano",
@@ -84,18 +114,8 @@ const projects = [
     icon: Music,
     color: "#2d5a3d",
     featured: false,
-    category: "embedded"
-  },
-  {
-    title: "Proxy Lock",
-    subtitle: "Universal Smart Lock",
-    description: "Renter-friendly smart lock with Arduino, BLE, React dashboard, and Firebase—no permanent modifications needed.",
-    longDescription: "Designed for temporary installations preserving existing locks. Features proximity-based auto-unlock, guest access codes, activity logging, and secure cloud synchronization. Perfect for renters who can't modify hardware.",
-    tags: ["Arduino", "React", "Firebase", "BLE", "IoT", "3D Printing"],
-    icon: Lock,
-    color: "#1a3a2a",
-    featured: false,
-    category: "iot"
+    category: "embedded",
+    githubUrl: "https://github.com/pkrish5/ECE319H-Embedded-Systems-Honors"
   },
   {
     title: "Shelter Safe",
@@ -106,7 +126,8 @@ const projects = [
     icon: Shield,
     color: "#3d6b4d",
     featured: false,
-    category: "mobile"
+    category: "mobile",
+    githubUrl: "https://github.com/pkrish5/Shelter-Safe" // Update this link
   },
   {
     title: "Longhorn Network",
@@ -117,18 +138,8 @@ const projects = [
     icon: Network,
     color: "#2a4a3a",
     featured: false,
-    category: "fullstack"
-  },
-  {
-    title: "BrainBoard",
-    subtitle: "Audio Intelligence",
-    description: "Real-time audio pipeline with Deepgram speech-to-text and Gemini API for intelligent content analysis.",
-    longDescription: "Streaming audio capture with live transcription, speaker diarization, and AI-powered insight extraction for meetings and lectures using WebSocket connections.",
-    tags: ["Deepgram", "Gemini API", "Python", "NLP", "WebSockets"],
-    icon: Terminal,
-    color: "#1f3f2f",
-    featured: false,
-    category: "ml"
+    category: "fullstack",
+    githubUrl: "https://github.com/pkrish5/LonghornNetwork"
   },
   {
     title: "BLIP Interpreter",
@@ -139,7 +150,8 @@ const projects = [
     icon: Code2,
     color: "#4a7a5a",
     featured: false,
-    category: "systems"
+    category: "systems",
+    githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   },
   {
     title: "Set ADT",
@@ -150,7 +162,8 @@ const projects = [
     icon: Database,
     color: "#2d5a3d",
     featured: false,
-    category: "systems"
+    category: "systems",
+    githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   },
   {
     title: "Customer Database",
@@ -161,7 +174,8 @@ const projects = [
     icon: Users,
     color: "#1a3a2a",
     featured: false,
-    category: "systems"
+    category: "systems",
+    githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   },
   {
     title: "Dijkstra & Prim's",
@@ -172,7 +186,8 @@ const projects = [
     icon: GitBranch,
     color: "#3d6b4d",
     featured: false,
-    category: "algorithms"
+    category: "algorithms",
+    githubUrl: "https://github.com/pkrish5/UT-Power-Grid-Connector-Graphs"
   },
   {
     title: "Matrix Multiplication",
@@ -183,7 +198,8 @@ const projects = [
     icon: Layers,
     color: "#2a4a3a",
     featured: false,
-    category: "systems"
+    category: "systems",
+    githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   },
   {
     title: "Recursive Algorithms",
@@ -194,7 +210,8 @@ const projects = [
     icon: Brain,
     color: "#1f4f3f",
     featured: false,
-    category: "algorithms"
+    category: "algorithms",
+    githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   }
 ];
 
@@ -238,7 +255,19 @@ const skills = [
 const achievements = [
   { title: "1st Place", event: "Sony AITRIOS Hackathon", icon: Award },
   { title: "3rd Place", event: "Citi Innovation Competition", icon: Award },
-  { title: "Research Lead", event: "Texas Guadaloop", icon: Zap }
+  { title: "2nd Place", event: "ExxonMobil Case Competition", icon: Zap }
+];
+
+const coursework = [
+  "Data Structures & Algorithms",
+  "Operating Systems",
+  "Software Design I/II & Lab",
+  "Embedded Systems",
+  "Computer Architecture",
+  "Machine Learning",
+  "Linear Algebra & Matrices",
+  "Probability",
+  "Discrete Math"
 ];
 
 function Navbar({ activeSection }) {
@@ -254,7 +283,7 @@ function Navbar({ activeSection }) {
   const navItems = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
 
   return (
-    <motion.nav 
+    <motion.nav
       className={`navbar ${scrolled ? 'scrolled' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -288,7 +317,7 @@ function Navbar({ activeSection }) {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             className="nav-mobile"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
@@ -323,13 +352,11 @@ function Hero() {
   return (
     <section ref={ref} className="hero" id="hero">
       <motion.div className="hero-bg" style={{ y }}>
-        <div className="grid-pattern" />
-        <div className="gradient-orb orb-1" />
-        <div className="gradient-orb orb-2" />
+        {/* Mesh gradient via CSS */}
       </motion.div>
 
       <motion.div className="hero-content" style={{ opacity }}>
-        <motion.div 
+        <motion.div
           className="hero-badge"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -339,17 +366,17 @@ function Hero() {
           <span>Austin, Texas</span>
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           className="hero-title"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <span className="title-line">Pranav</span>
-          <span className="title-line accent">Krishnan</span>
+          <span className="title-line accent"> Krishnan</span>
         </motion.h1>
 
-        <motion.p 
+        <motion.p
           className="hero-subtitle"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -358,17 +385,17 @@ function Hero() {
           Software Engineer & Embedded Systems Developer
         </motion.p>
 
-        <motion.p 
+        <motion.p
           className="hero-description"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          ECE student at UT Austin crafting intelligent systems at the intersection 
+          ECE student at UT Austin crafting intelligent systems at the intersection
           of hardware and software. Currently building ML pipelines at Avocado (YC W21).
         </motion.p>
 
-        <motion.div 
+        <motion.div
           className="hero-cta"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -383,15 +410,15 @@ function Hero() {
           </a>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="hero-stats"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           {achievements.map((achievement, i) => (
-            <motion.div 
-              key={i} 
+            <motion.div
+              key={i}
               className="stat-item"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -407,7 +434,7 @@ function Hero() {
         </motion.div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="scroll-indicator"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -429,7 +456,7 @@ function About() {
   return (
     <section ref={ref} className="about section" id="about">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -440,26 +467,22 @@ function About() {
         </motion.div>
 
         <div className="about-grid">
-          <motion.div 
+          <motion.div
             className="about-content"
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="about-lead">
-              I'm a problem solver who believes the best technology is invisible—it 
-              just works, delighting users without demanding their attention.
+              I love to build things that solve real problems.
             </p>
             <p className="about-text">
-              As an Electrical & Computer Engineering student at UT Austin with a minor 
-              in Statistics and Data Science, I bridge the gap between hardware and 
-              software. From ESP32 microcontrollers to cloud-native ML pipelines, I 
-              build systems that are both technically elegant and practically impactful.
+              I’m an Electrical & Computer Engineering student at UT Austin with a minor
+              in Statistics and Data Science, and I like working across both hardware and software.
+              I enjoy figuring things out, experimenting, and turning ideas into things that actually work.
             </p>
             <p className="about-text">
-              When I'm not coding, you'll find me competing in hackathons, conducting 
-              hyperloop research with Texas Guadaloop, or teaching digital safety to 
-              seniors in my community through Cyber Safety Branch.
+              Outside of classes, you’ll usually find me playing basketball, thrifting, working out or finding the next best thai spot
             </p>
 
             <div className="about-education">
@@ -473,10 +496,21 @@ function About() {
                   <p className="education-minor">Minor: Statistics & Data Science</p>
                 </div>
               </div>
+
+              <div className="coursework-container" style={{ marginTop: '1.5rem' }}>
+                <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>Relevant Coursework</h4>
+                <div className="coursework-tags" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  {coursework.map((course, i) => (
+                    <span key={i} className="tech-tag" style={{ background: 'var(--color-bg-card)', fontSize: '0.8rem' }}>
+                      {course}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
 
-          <motion.div 
+          {/* <motion.div
             className="about-visual"
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -499,7 +533,7 @@ function About() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
@@ -513,7 +547,7 @@ function Experience() {
   return (
     <section ref={ref} className="experience section" id="experience">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -525,7 +559,7 @@ function Experience() {
 
         <div className="experience-timeline">
           {experience.map((exp, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               className="experience-item"
               initial={{ opacity: 0, y: 40 }}
@@ -536,7 +570,7 @@ function Experience() {
                 <div className="marker-dot" />
                 {i < experience.length - 1 && <div className="marker-line" />}
               </div>
-              
+
               <div className="experience-card">
                 <div className="experience-header">
                   <div className="experience-company">
@@ -564,9 +598,9 @@ function Experience() {
 
 function ProjectCard({ project, index, onClick, isInView }) {
   const IconComponent = project.icon;
-  
+
   return (
-    <motion.article 
+    <motion.article
       className={`project-card ${project.featured ? 'featured' : ''}`}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -578,7 +612,7 @@ function ProjectCard({ project, index, onClick, isInView }) {
         <div className="project-icon" style={{ background: project.color }}>
           <IconComponent size={project.featured ? 28 : 22} />
         </div>
-        
+
         <div className="project-content">
           <div className="project-header">
             <div>
@@ -589,9 +623,9 @@ function ProjectCard({ project, index, onClick, isInView }) {
               <ChevronRight size={18} />
             </div>
           </div>
-          
+
           <p className="project-description">{project.description}</p>
-          
+
           <div className="project-tags">
             {project.tags.slice(0, project.featured ? 6 : 4).map((tag, j) => (
               <span key={j} className="project-tag">{tag}</span>
@@ -605,16 +639,16 @@ function ProjectCard({ project, index, onClick, isInView }) {
 
 function ProjectModal({ project, onClose }) {
   const IconComponent = project.icon;
-  
+
   return (
-    <motion.div 
+    <motion.div
       className="modal-overlay"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
     >
-      <motion.div 
+      <motion.div
         className="modal-content"
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -624,7 +658,7 @@ function ProjectModal({ project, onClose }) {
         <button className="modal-close" onClick={onClose}>
           <X size={24} />
         </button>
-        
+
         <div className="modal-header">
           <div className="modal-icon" style={{ background: project.color }}>
             <IconComponent size={32} />
@@ -634,26 +668,30 @@ function ProjectModal({ project, onClose }) {
             <p className="modal-subtitle">{project.subtitle}</p>
           </div>
         </div>
-        
+
         <div className="modal-body">
           <p className="modal-description">{project.longDescription}</p>
-          
+
           <div className="modal-tags">
             {project.tags.map((tag, i) => (
               <span key={i} className="modal-tag">{tag}</span>
             ))}
           </div>
         </div>
-        
+
         <div className="modal-footer">
-          <a href="#" className="btn btn-primary">
-            <Github size={18} />
-            <span>View Code</span>
-          </a>
-          <a href="#" className="btn btn-secondary">
-            <ExternalLink size={18} />
-            <span>Live Demo</span>
-          </a>
+          {project.githubUrl && (
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              <Github size={18} />
+              <span>View Code</span>
+            </a>
+          )}
+          {project.demoUrl && (
+            <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <ExternalLink size={18} />
+              <span>Live Demo</span>
+            </a>
+          )}
         </div>
       </motion.div>
     </motion.div>
@@ -666,14 +704,14 @@ function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(p => p.category === activeFilter);
 
   return (
     <section ref={ref} className="projects section" id="projects">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -683,7 +721,7 @@ function Projects() {
           <h2 className="section-title">Projects</h2>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="project-filters"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -715,9 +753,9 @@ function Projects() {
 
       <AnimatePresence>
         {selectedProject && (
-          <ProjectModal 
-            project={selectedProject} 
-            onClose={() => setSelectedProject(null)} 
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
           />
         )}
       </AnimatePresence>
@@ -732,7 +770,7 @@ function Skills() {
   return (
     <section ref={ref} className="skills section" id="skills">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -744,7 +782,7 @@ function Skills() {
 
         <div className="skills-grid">
           {skills.map((skillGroup, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               className="skill-category"
               initial={{ opacity: 0, y: 40 }}
@@ -754,8 +792,8 @@ function Skills() {
               <h3 className="skill-category-title">{skillGroup.category}</h3>
               <div className="skill-items">
                 {skillGroup.items.map((skill, j) => (
-                  <motion.span 
-                    key={j} 
+                  <motion.span
+                    key={j}
                     className="skill-item"
                     whileHover={{ scale: 1.05, y: -2 }}
                     transition={{ type: "spring", stiffness: 400 }}
@@ -785,7 +823,7 @@ function Contact() {
   return (
     <section ref={ref} className="contact section" id="contact">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-header center"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -795,19 +833,19 @@ function Contact() {
           <h2 className="section-title">Get in Touch</h2>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="contact-content"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="contact-text">
-            I'm always interested in hearing about new opportunities, interesting 
+            I'm always interested in hearing about new opportunities, interesting
             projects, or just connecting with fellow engineers and builders.
           </p>
 
-          <motion.a 
-            href="mailto:pranav@example.com" 
+          <motion.a
+            href="mailto:pranav@example.com"
             className="btn btn-primary btn-large"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -818,7 +856,7 @@ function Contact() {
 
           <div className="social-links">
             {socialLinks.map((link, i) => (
-              <motion.a 
+              <motion.a
                 key={i}
                 href={link.href}
                 className="social-link"
