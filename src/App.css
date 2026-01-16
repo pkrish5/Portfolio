@@ -2,50 +2,48 @@
    CSS Variables & Theme (Sleek Emerald)
    ======================================== */
 :root {
-  /* Zinc & Emerald Palette */
-  --color-bg-primary: #18181b;
-  /* Zinc-900 */
-  --color-bg-secondary: #27272a;
-  /* Zinc-800 */
-  --color-bg-tertiary: #3f3f46;
-  /* Zinc-700 */
-  --color-bg-card: #27272a;
-  --color-bg-card-hover: #3f3f46;
+  /* Sage & Dark Plant Theme */
+  --color-bg-primary: #0c140e;
+  /* Deep forest black-green */
+  --color-bg-secondary: #15221a;
+  /* Dark moss green */
+  --color-bg-tertiary: #1f3126;
+  /* Deep sage */
+  --color-bg-card: #132018;
+  /* Card background */
+  --color-bg-card-hover: #1a2c22;
 
   /* Accent: Emerald/Mint */
-  --color-accent: #34d399;
-  /* Emerald-400 */
-  --color-accent-dim: #10b981;
-  /* Emerald-500 */
+  --color-accent: #95d5b2;
+  /* Pale sage accent */
+  --color-accent-dim: rgba(149, 213, 178, 0.1);
   --color-accent-light: rgba(52, 211, 153, 0.1);
-  --color-accent-glow: rgba(52, 211, 153, 0.2);
+  /* Kept original as no replacement provided */
+  --color-accent-glow: rgba(149, 213, 178, 0.4);
 
   /* Text Colors */
-  --color-text-primary: #fafafa;
-  /* Zinc-50 */
-  --color-text-secondary: #d4d4d8;
-  /* Zinc-300 */
-  --color-text-tertiary: #a1a1aa;
-  /* Zinc-400 */
-  --color-text-muted: #71717a;
-  /* Zinc-500 */
+  --color-text-primary: #ecfdf5;
+  /* Mint white */
+  --color-text-secondary: #a7b8b0;
+  /* Muted sage text */
+  --color-text-tertiary: #6b8c7d;
+  /* Darker sage text */
+  --color-text-muted: #527063;
 
   /* Borders */
-  --color-border: #3f3f46;
-  /* Zinc-700 */
-  --color-border-hover: #52525b;
-  /* Zinc-600 */
+  --color-border: #23362b;
+  --color-border-hover: #2d4a3a;
 
   /* Typography */
   --font-display: 'Crimson Pro', serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', sans-serif;
 
   /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
   --space-2xl: 4rem;
   --space-3xl: 6rem;
 
@@ -263,7 +261,7 @@ img {
 }
 
 .title-line.accent {
-  background: linear-gradient(135deg, var(--color-accent) 0%, #059669 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #40916c 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
