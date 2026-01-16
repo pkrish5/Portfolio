@@ -372,7 +372,8 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="title-line">Pranav Krishnan</span>
+          <span className="title-line">Pranav</span>
+          <span className="title-line accent"> Krishnan</span>
         </motion.h1>
 
         <motion.p
