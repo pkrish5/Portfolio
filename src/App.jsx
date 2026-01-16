@@ -18,8 +18,9 @@ const projects = [
     icon: Leaf,
     color: "#10b981",
     featured: true,
-    category: "fullstack",
-    githubUrl: "https://plantbuddi.com" // Update this link
+    categories: ["mobile", "fullstack", "ml", "cloud"],
+    githubUrl: "https://plantbuddi.com",
+    demoUrl: "https://www.plantbuddi.com"
   },
   {
     title: "Brain Board",
@@ -30,8 +31,8 @@ const projects = [
     icon: Brain,
     color: "#8b5cf6",
     featured: true,
-    category: "ml",
-    githubUrl: "https://github.com/adiv06/HackTX-25" // Update this link
+    categories: ["ml"],
+    githubUrl: "https://github.com/adiv06/HackTX-25"
   },
   {
     title: "CrowdCast",
@@ -42,8 +43,8 @@ const projects = [
     icon: Users,
     color: "#f59e0b",
     featured: true,
-    category: "ml",
-    githubUrl: "https://github.com/pkrish5/CrowdCast" // Update this link
+    categories: ["ml"],
+    githubUrl: "https://github.com/pkrish5/CrowdCast"
   },
   {
     title: "Texas Guadaloop",
@@ -54,8 +55,8 @@ const projects = [
     icon: Gauge,
     color: "#3d6b4d",
     featured: false,
-    category: "algorithms",
-    githubUrl: "https://github.com/pkrish5/Texas-Guadaloop" // Update this link
+    categories: ["algorithms"],
+    githubUrl: "https://github.com/pkrish5/Texas-Guadaloop"
   },
   {
     title: "Flappy Bird Game",
@@ -66,7 +67,7 @@ const projects = [
     icon: Gamepad2,
     color: "#2a4a3a",
     featured: false,
-    category: "embedded",
+    categories: ["embedded"],
     githubUrl: "https://github.com/pkrish5/ECE319H-Embedded-Systems-Honors"
   },
   {
@@ -78,8 +79,8 @@ const projects = [
     icon: Lock,
     color: "#1a3a2a",
     featured: false,
-    category: "iot",
-    githubUrl: "https://github.com/pkrish5/Proxy-Lock" // Update this link
+    categories: ["iot"],
+    githubUrl: "https://github.com/pkrish5/ProxyLock"
   },
   {
     title: "Traffic Light FSM",
@@ -90,7 +91,7 @@ const projects = [
     icon: Zap,
     color: "#1f3f2f",
     featured: false,
-    category: "embedded",
+    categories: ["embedded"],
     githubUrl: "https://github.com/pkrish5/ECE319H-Embedded-Systems-Honors"
   },
   {
@@ -102,7 +103,7 @@ const projects = [
     icon: Radio,
     color: "#4a7a5a",
     featured: false,
-    category: "embedded",
+    categories: ["embedded"],
     githubUrl: "https://github.com/pkrish5/ECE319H-Embedded-Systems-Honors"
   },
   {
@@ -114,7 +115,7 @@ const projects = [
     icon: Music,
     color: "#2d5a3d",
     featured: false,
-    category: "embedded",
+    categories: ["embedded"],
     githubUrl: "https://github.com/pkrish5/ECE319H-Embedded-Systems-Honors"
   },
   {
@@ -126,8 +127,8 @@ const projects = [
     icon: Shield,
     color: "#3d6b4d",
     featured: false,
-    category: "mobile",
-    githubUrl: "https://github.com/pkrish5/Shelter-Safe" // Update this link
+    categories: ["mobile"],
+    githubUrl: "https://github.com/onikh/ShelterSafe"
   },
   {
     title: "Longhorn Network",
@@ -138,7 +139,7 @@ const projects = [
     icon: Network,
     color: "#2a4a3a",
     featured: false,
-    category: "fullstack",
+    categories: ["fullstack"],
     githubUrl: "https://github.com/pkrish5/LonghornNetwork"
   },
   {
@@ -150,7 +151,7 @@ const projects = [
     icon: Code2,
     color: "#4a7a5a",
     featured: false,
-    category: "systems",
+    categories: ["systems"],
     githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   },
   {
@@ -162,7 +163,7 @@ const projects = [
     icon: Database,
     color: "#2d5a3d",
     featured: false,
-    category: "systems",
+    categories: ["systems"],
     githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   },
   {
@@ -174,7 +175,7 @@ const projects = [
     icon: Users,
     color: "#1a3a2a",
     featured: false,
-    category: "systems",
+    categories: ["systems"],
     githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   },
   {
@@ -186,7 +187,7 @@ const projects = [
     icon: GitBranch,
     color: "#3d6b4d",
     featured: false,
-    category: "algorithms",
+    categories: ["algorithms"],
     githubUrl: "https://github.com/pkrish5/UT-Power-Grid-Connector-Graphs"
   },
   {
@@ -198,7 +199,7 @@ const projects = [
     icon: Layers,
     color: "#2a4a3a",
     featured: false,
-    category: "systems",
+    categories: ["systems"],
     githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   },
   {
@@ -210,7 +211,7 @@ const projects = [
     icon: Brain,
     color: "#1f4f3f",
     featured: false,
-    category: "algorithms",
+    categories: ["algorithms"],
     githubUrl: "https://github.com/pkrish5/Software-2-Honors-ECE-312H-Labs"
   }
 ];
@@ -223,7 +224,8 @@ const categories = [
   { id: 'iot', label: 'IoT & Hardware' },
   { id: 'systems', label: 'Systems Programming' },
   { id: 'algorithms', label: 'Algorithms' },
-  { id: 'mobile', label: 'Mobile' }
+  { id: 'mobile', label: 'Mobile' },
+  { id: 'cloud', label: 'Cloud' }
 ];
 
 const experience = [
@@ -706,7 +708,7 @@ function Projects() {
 
   const filteredProjects = activeFilter === 'all'
     ? projects
-    : projects.filter(p => p.category === activeFilter);
+    : projects.filter(p => p.categories && p.categories.includes(activeFilter));
 
   return (
     <section ref={ref} className="projects section" id="projects">
