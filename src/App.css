@@ -824,6 +824,46 @@ img {
   margin-bottom: var(--space-lg);
 }
 
+/* Modal Layout Refinements */
+.modal-content-layout.has-image {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.modal-text-content {
+  flex: 1;
+}
+
+.modal-project-image {
+  flex: 0 0 40%;
+  /* Takes up 40% of the space */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-tertiary);
+}
+
+.modal-project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .modal-content-layout.has-image {
+    flex-direction: column;
+  }
+
+  .modal-project-image {
+    flex: none;
+    width: 100%;
+    order: -1;
+    /* Image on top for mobile */
+    margin-bottom: var(--space-md);
+  }
+}
+
 .modal-icon {
   width: 64px;
   height: 64px;

@@ -20,6 +20,7 @@ const projects = [
     color: "#10b981",
     featured: true,
     categories: ["mobile", "fullstack", "ml", "cloud"],
+    image: "/buddi.png",
     githubUrl: "https://plantbuddi.com",
     demoUrl: "https://www.plantbuddi.com"
   },
@@ -554,14 +555,7 @@ function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="project-screenshot">
-              <img
-                src="/buddi.png"
-                alt="Buddi — AI-powered personal budgeting app screenshot"
-                className="screenshot-img"
-              />
-              <p className="screenshot-caption">Buddi · AI Budgeting App</p>
-            </div>
+            {/* Keeping the visual pattern for aesthetics but removing the large image */}
           </motion.div>
         </div>
       </div>
@@ -699,12 +693,22 @@ function ProjectModal({ project, onClose }) {
         </div>
 
         <div className="modal-body">
-          <p className="modal-description">{project.longDescription}</p>
+          <div className={`modal-content-layout ${project.image ? 'has-image' : ''}`}>
+            <div className="modal-text-content">
+              <p className="modal-description">{project.longDescription}</p>
 
-          <div className="modal-tags">
-            {project.tags.map((tag, i) => (
-              <span key={i} className="modal-tag">{tag}</span>
-            ))}
+              <div className="modal-tags">
+                {project.tags.map((tag, i) => (
+                  <span key={i} className="modal-tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+
+            {project.image && (
+              <div className="modal-project-image">
+                <img src={project.image} alt={project.title} />
+              </div>
+            )}
           </div>
         </div>
 
