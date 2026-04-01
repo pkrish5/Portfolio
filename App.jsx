@@ -807,7 +807,7 @@ function Contact() {
           </p>
 
           <motion.a 
-            href="mailto:pranav@example.com" 
+            href="mailto:pranav.krishnan05@gmail.com" 
             className="btn btn-primary btn-large"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
