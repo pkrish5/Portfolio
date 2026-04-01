@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Menu, X, ArrowUpRight, MapPin, Calendar, Award, Code2, Cpu, Database, Globe, Zap, Layers, Terminal, Leaf, Lock, Brain, Network, Gauge, Gamepad2, Music, Radio, Shield, Users, GitBranch, ChevronRight } from 'lucide-react';
+import { Mail, Github, Linkedin, ExternalLink, ChevronDown, Menu, X, ArrowUpRight, MapPin, Calendar, Award, Code2, Cpu, Database, Globe, Zap, Layers, Terminal, Leaf, Lock, Brain, Network, Gauge, Gamepad2, Music, Radio, Shield, Users, GitBranch, ChevronRight } from 'lucide-react';
+import { Chip, Button } from '@mui/material';
 import '@fontsource/crimson-pro/400.css';
 import '@fontsource/crimson-pro/600.css';
 import '@fontsource/inter/400.css';
@@ -503,9 +504,20 @@ function About() {
                 <h4 style={{ fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>Relevant Coursework</h4>
                 <div className="coursework-tags" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {coursework.map((course, i) => (
-                    <span key={i} className="tech-tag" style={{ background: 'var(--color-bg-card)', fontSize: '0.8rem' }}>
-                      {course}
-                    </span>
+                    <Chip 
+                      key={i} 
+                      label={course} 
+                      size="small" 
+                      sx={{ 
+                        bgcolor: 'var(--color-bg-tertiary)', 
+                        color: 'var(--color-text-secondary)',
+                        border: '1px solid var(--color-border)',
+                        '&:hover': {
+                          bgcolor: 'var(--color-bg-card-hover)',
+                          color: 'var(--color-text-primary)'
+                        }
+                      }} 
+                    />
                   ))}
                 </div>
               </div>
@@ -536,6 +548,21 @@ function About() {
               </div>
             </div>
           </motion.div> */}
+          <motion.div
+            className="about-visual"
+            initial={{ opacity: 0, x: 40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className="project-screenshot">
+              <img
+                src="/buddi.png"
+                alt="Buddi — AI-powered personal budgeting app screenshot"
+                className="screenshot-img"
+              />
+              <p className="screenshot-caption">Buddi · AI Budgeting App</p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -846,15 +873,33 @@ function Contact() {
             projects, or just connecting with fellow engineers and builders.
           </p>
 
-          <motion.a
-            href="mailto:pranav@example.com"
-            className="btn btn-primary btn-large"
+          <Button
+            component={motion.a}
+            href="mailto:pranav.krishnan05@gmail.com"
+            variant="contained"
+            size="large"
+            startIcon={<Mail />}
+            sx={{
+              bgcolor: 'var(--color-accent-dim)',
+              color: 'white',
+              borderRadius: '8px',
+              px: 4,
+              py: 1.5,
+              textTransform: 'none',
+              fontSize: '1.1rem',
+              fontWeight: 500,
+              fontFamily: 'inherit',
+              '&:hover': {
+                bgcolor: 'var(--color-accent)',
+                transform: 'translateY(-1px)',
+                boxShadow: '0 4px 12px rgba(52, 211, 153, 0.2)'
+              }
+            }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Mail size={20} />
-            <span>Say Hello</span>
-          </motion.a>
+            Say Hello
+          </Button>
 
           <div className="social-links">
             {socialLinks.map((link, i) => (
