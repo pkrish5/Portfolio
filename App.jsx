@@ -34,13 +34,24 @@ const projects = [
   {
     title: "Texas Guadaloop",
     subtitle: "Hyperloop Route Optimization",
-    description: "Multi-objective A* pathfinding for hyperloop routes balancing travel time, curvature, and operational efficiency.",
-    longDescription: "Research contribution to UT Austin's hyperloop team. Engineered algorithms processing Texas terrain data with elevation and infrastructure considerations for next-generation transportation planning.",
-    tags: ["Python", "A* Algorithm", "Multi-objective Optimization", "GIS", "Research"],
+    description: "Multi-objective A* pathfinding for Hyperloop routes across the Texas Triangle using GeoAI, OpenStreetMap, and HPA* hierarchical graphs for 5-10x search speedup.",
+    longDescription: "Research Lead for UT Austin's hyperloop team. Built A*-based routing engine integrating GeoAI and OpenStreetMap for large-scale Hyperloop pathfinding. Applied NAMOA* and NAMOA*-DR multi-objective search seeded by 15+ A* weight configs for Pareto-optimal routes. Engineered HPA* hierarchical graph over OSM road network for 5-10x speedup over pure APEX search on Texas-scale rasters.",
+    tags: ["Python", "A* / NAMOA*", "HPA*", "GeoAI", "OpenStreetMap", "Multi-objective Optimization"],
     icon: Gauge,
     color: "#3d6b4d",
     featured: true,
     category: "algorithms"
+  },
+  {
+    title: "CrowdCast",
+    subtitle: "Edge AI Crowd Management",
+    description: "1st-place hackathon winner: edge-sensing AI system reducing overcrowding by rerouting tourists toward lesser-known attractions using Sony AITRIOS sensor and real-time analytics.",
+    longDescription: "Built an edge AI system using Sony AITRIOS sensor to detect crowd density in real-time. Designed a low-latency pipeline from on-device inference to REST API output to optimize foot traffic flow. Awarded 1st place overall at hackathon.",
+    tags: ["Python", "Edge Computing", "Sony AITRIOS", "Real-time Analytics", "Computer Vision"],
+    icon: Globe,
+    color: "#4a5568",
+    featured: true,
+    category: "ml"
   },
   {
     title: "Flappy Bird Game",
@@ -121,10 +132,10 @@ const projects = [
   },
   {
     title: "BrainBoard",
-    subtitle: "Audio Intelligence",
-    description: "Real-time audio pipeline with Deepgram speech-to-text and Gemini API for intelligent content analysis.",
-    longDescription: "Streaming audio capture with live transcription, speaker diarization, and AI-powered insight extraction for meetings and lectures using WebSocket connections.",
-    tags: ["Deepgram", "Gemini API", "Python", "NLP", "WebSockets"],
+    subtitle: "AI Mind-Mapping Tool",
+    description: "AI-powered mind-mapping tool that transcribes live conversations and visualizes ideas as knowledge graphs to aid ideation.",
+    longDescription: "Built an AI-powered mind-mapping tool using Python, Deepgram, and Gemini. Integrated AWS Lambda and DynamoDB to enable real-time speech-to-visual processing on the edge, turning live conversations into structured knowledge graphs.",
+    tags: ["Python", "Deepgram", "Gemini", "AWS Lambda", "DynamoDB"],
     icon: Terminal,
     color: "#1f3f2f",
     featured: false,
@@ -211,33 +222,56 @@ const categories = [
 
 const experience = [
   {
-    company: "Avocado",
-    badge: "YC W21",
-    role: "Software Engineer Intern",
-    period: "Current",
-    description: "Building ML pipelines for automated menu processing. Developing scalable data extraction systems using computer vision and NLP to digitize restaurant operations.",
-    tech: ["Python", "ML Pipelines", "Computer Vision", "NLP"]
+    company: "Dell Technologies",
+    role: "Software Development Intern",
+    period: "May 2026 – Aug 2026",
+    description: "Developing on the PowerScale NFS filesystem team, contributing to low-level storage systems code in C/C++. Working within a cross-functional Agile team on latency-sensitive infrastructure for enterprise-scale deployments.",
+    tech: ["C", "C++", "NFS", "Storage Systems", "Agile"]
+  },
+  {
+    company: "XFund",
+    role: "Software Intern",
+    period: "Jan 2026 – May 2026",
+    description: "Built automated VC deal pipeline on GCP cutting diligence write-up time by 85% via Asana, Notion, and Perplexity AI. Designed 3 event-driven TypeScript microservices with Cloud Run and Cloud Tasks for stage-gated IC memo workflows.",
+    tech: ["TypeScript", "GCP", "Cloud Run", "Cloud Tasks", "Perplexity AI"]
+  },
+  {
+    company: "Texas Guadaloop",
+    role: "Research Lead",
+    period: "Sep 2025 – Present",
+    description: "Built A*-based routing engine integrating GeoAI and OpenStreetMap for large-scale Hyperloop pathfinding across the Texas Triangle. Applied NAMOA* multi-objective pathfinding and HPA* hierarchical graph for 5-10x speedup over pure APEX search.",
+    tech: ["Python", "A* / NAMOA*", "GIS", "OpenStreetMap", "Multi-objective Optimization"]
   },
   {
     company: "Citibank",
-    role: "Software Engineer Intern",
-    period: "Summer 2024",
-    description: "Built microservices and NLP-based duplicate detection systems. Won 3rd place in internal innovation competition for novel fraud detection approach.",
-    tech: ["Microservices", "NLP", "Java", "AWS"]
+    role: "Software Development Intern",
+    period: "Jun 2025 – Aug 2025",
+    description: "Architected full-stack microservice with Angular, REST, Flask & KNN to auto-detect duplicates across 500K+ production defects. Applied NLP for semantic similarity search, achieving 40% faster resolution and 30% productivity gains for 35M+ user platforms.",
+    tech: ["Python", "Flask", "Angular", "NLP", "KNN", "REST API"]
+  },
+  {
+    company: "Avocado",
+    badge: "YC W21",
+    role: "Machine Learning / Software Intern",
+    period: "Sep 2025 – Dec 2025",
+    description: "Built Python pipelines with GPT-4o Vision & Playwright to ingest menus from images/sites with 95% accuracy. Integrated validated data into the onboarding flow, reducing manual entry by 70%+ and enabling scalable POS setup automation.",
+    tech: ["Python", "GPT-4o Vision", "Playwright", "BeautifulSoup", "YAML"]
   }
 ];
 
 const skills = [
-  { category: "Languages", items: ["Python", "JavaScript", "TypeScript", "Java", "C++", "C", "Dart", "SQL", "ARM Assembly"] },
-  { category: "Frontend", items: ["React", "Flutter", "Next.js", "SwiftUI", "Tailwind CSS", "Framer Motion"] },
-  { category: "Backend", items: ["Node.js", "AWS Lambda", "Firebase", "PostgreSQL", "Docker", "REST APIs"] },
-  { category: "ML/AI", items: ["PyTorch", "TensorFlow", "OpenCV", "Gemini API", "NLP", "Computer Vision"] },
-  { category: "Embedded", items: ["ESP32", "Arduino", "ARM Cortex", "MQTT", "BLE", "I2C/SPI/UART"] }
+  { category: "Languages", items: ["Python", "Java", "C", "C++", "TypeScript", "JavaScript", "SQL", "R", "Swift", "ARM Assembly", "Verilog"] },
+  { category: "Cloud / DevOps", items: ["AWS Lambda", "DynamoDB", "S3", "GCP Cloud Run", "Firebase", "Docker", "Git", "Linux"] },
+  { category: "Backend / Systems", items: ["REST API", "Flask", "Node.js", "PostgreSQL", "MQTT", "Event-driven Microservices", "Multithreading"] },
+  { category: "ML / AI", items: ["TensorFlow", "Keras", "PyTorch", "scikit-learn", "XGBoost", "NLP", "GPT-4o Vision", "Gemini Vision AI", "Deepgram"] },
+  { category: "Embedded / Hardware", items: ["ESP32", "ARM Cortex-M0+", "FPGA (Basys3)", "SPI", "UART", "I2C", "GPIO", "SysTick", "Verilog"] }
 ];
 
 const achievements = [
+  { title: "2nd Place", event: "Palantir Foundry Hackathon", icon: Award },
   { title: "1st Place", event: "Sony AITRIOS Hackathon", icon: Award },
-  { title: "3rd Place", event: "Citi Innovation Competition", icon: Award },
+  { title: "3rd Place", event: "Citi PEO Hackathon", icon: Award },
+  { title: "2nd Place", event: "ExxonMobil Case Competition", icon: Award },
   { title: "Research Lead", event: "Texas Guadaloop", icon: Zap }
 ];
 
@@ -355,7 +389,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Software Engineer & Embedded Systems Developer
+          Software Engineer & Full-Stack Builder
         </motion.p>
 
         <motion.p 
@@ -364,8 +398,8 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          ECE student at UT Austin crafting intelligent systems at the intersection 
-          of hardware and software. Currently building ML pipelines at Avocado (YC W21).
+          ECE student at UT Austin with a Minor in Statistics & Data Science, building 
+          intelligent systems across cloud, ML, and embedded hardware. Incoming SWE intern at Dell Technologies.
         </motion.p>
 
         <motion.div 
